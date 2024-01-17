@@ -1,0 +1,35 @@
+<!-- search-results.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+<h1>Facturi inregistrate</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Nr. factura</th>
+        <th>Client</th>
+        <th>Furnizor</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="invoice : ${invoices}">
+        <td th:text="${invoice.invoiceNr}"></td>
+        <td th:text="${invoice.client.name}"></td>
+        <td th:text="${invoice.furnizor.name}"></td>
+
+    </tr>
+    </tbody>
+</table>
+<form action="/scrum/main" method="get">
+    <button type="submit">Inapoi</button>
+</form>
+</body>
+</html>

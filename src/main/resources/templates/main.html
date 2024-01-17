@@ -1,0 +1,47 @@
+<!-- src/main/resources/templates/main.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturel - Invoice Management System</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <script src="static/js/scripts.js"></script>
+
+</head>
+<body>
+<header>
+    <h1>Facturel - Invoice Management System</h1>
+</header>
+
+<section id="uploadSection">
+    <h2>Adauga Factura</h2>
+    <form id="pdfUploadForm" enctype="multipart/form-data">
+        <label for="pdfFile">Selecteaza fisier PDF:</label>
+        <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" required>
+        <button type="button" onclick="uploadPDF()">Incarca factura</button>
+    </form>
+</section>
+
+<section id="searchSection">
+    <h2>Cauta Facturi</h2>
+    <form action="/scrum/search" method="get">
+        <label for="clientName">Nume Client:</label>
+        <input type="text" id="clientName" name="clientName">
+
+        <label for="furnizorName">Nume Furnizor:</label>
+        <input type="text" id="furnizorName" name="furnizorName">
+
+        <label for="invoiceNr">Nr. Factura:</label>
+        <input type="text" id="invoiceNr" name="invoiceNr">
+
+        <button type="submit">Cauta</button>
+    </form>
+</section>
+
+<footer>
+    &copy; 2023 Facturel - Invoice Management System
+</footer>
+
+</body>
+</html>
